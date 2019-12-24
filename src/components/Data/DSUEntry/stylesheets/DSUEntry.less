@@ -1,0 +1,453 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+
+.commonError {
+	color:red;
+	font-size: 12px;
+}
+
+.idGenerator{
+	border-top: 2px solid #00695c;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.closeCollapse{
+	&:hover{
+		color: #024986 !important;
+		cursor: pointer !important;
+	}
+}
+
+.errorInput{
+	border-color: #C01616;
+	box-shadow: 0px 1px 4px #f68686bf;
+}
+
+.bmiWhrHolder {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	width: 50%;
+
+	p {
+		margin: 2px 0px 0px 0px;
+		font-size: 13px; 
+		padding: 7px; 
+		color: #c51212; 
+		background-color: #fdd1d1;
+		height: 30px;
+		width: fit-content;
+		transition: all 0.4s;
+	}
+}
+
+.giveborder{ 
+	
+	& :global .css-2o5izw{
+		& :focus{
+			border-color: @white-color !important;	
+		}
+		box-shadow: unset !important;
+        border-color: @white-color !important;
+	}
+	& :global .css-1aya2g8{
+		border: 1px solid;
+        border-color: #128212 !important; 
+	}
+	& :global .css-2o5izw{
+		border: 1px solid;
+        border-color: #128212 !important; 
+	}		
+}
+.giveerroBorder {
+		
+	& :global .css-2o5izw{
+		& :focus{
+			border-color: @white-color !important;	
+		}
+		box-shadow: unset !important;
+        border-color: @white-color !important;
+	}
+	& :global .css-1aya2g8{
+		border: 1px solid;
+        border-color: rgba(212, 0, 0, 0.699) !important; 
+	}
+	& :global .css-2o5izw{
+		border: 1px solid;
+        border-color: rgba(212, 0, 0, 0.699) !important; 
+	}	
+}
+.dateWidth {
+  & :global .react-datepicker__input-container {
+    width: 100%;
+  }
+  & :global .react-datepicker-wrapper{
+    width: 100%;
+  }
+}
+.ResultEllipsis{
+	& :global .css-1492t68{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: @width-pertg - 10%;
+		overflow: hidden;
+	}
+}
+
+
+#upBtn{
+	outline: none;
+}
+.upBtn{
+	&:hover{
+		box-shadow: @header-color 0px 0px 13px;
+		color: @white-color;
+		background-color: @header-color;
+	}
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: @font - 2px;
+	border: none;
+	outline: none;
+	background-color: @header-color;
+	color: @white-color;
+	cursor: pointer;
+	padding: @padding;
+	border-radius: 10px;
+	padding: @padding - 7px @padding - 5px;
+    outline: none;
+}
+
+
+
+
+.errorValid{
+	
+		border: 1px solid rgba(212, 0, 0, 0.699) !important;
+		// background: ~"url('./errorIcon.png')";
+		// background-position: 98%;
+		// background-size: 22px;
+		// background-repeat: no-repeat;
+}
+
+.dateCorect{
+	border: 1.2px solid #128212 !important;
+	background-position: @width-pertg - 2%;
+	background-size: @padding + 7px;
+	background-repeat: no-repeat;
+	padding-right: @padding - 9px;
+	padding-left: @padding -5px;
+
+
+	width: @width-pertg;
+	outline-color: @white-color;
+	background-color: #fafafa;
+	height: @height - 10px !important;
+	border-radius: @radius;
+}
+
+
+
+.disabledtest{
+	background-color: @grey-color !important;
+}
+.subtitle{
+	padding: @padding +5px @zero @zero;
+}
+.bgcontent{
+	background-color: @white-color;
+	padding-top: @padding * 5 - 1px;
+	padding-left: @padding * 6 + 6px;
+}
+.dsuentrybtn{
+	h4{
+		font-size: @padding+5px;
+		padding: @padding;
+	}
+   padding: 5px 30px;
+   background-color: @white-color;
+//    height: @height + 40px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   border-bottom: 1px solid #464a4c75;
+}
+.collapseTatile{
+	h6{
+		i{ 
+			float: right;
+		}
+		padding: @padding @padding - 5px;
+	}
+	height: @height;
+	background-color: @grey-color;
+    margin-top: @padding;
+}
+label{
+    font-weight: 650;
+	font-size: @padding - 3px;
+	padding-left: 4px;
+}
+.plus{
+	color: @header-color;
+	transition: all .4s;
+	transform: rotate(0deg)
+}
+.close{
+	transform: rotate(45deg) !important;
+	color: @red-color;
+}
+.inputstyle{
+	
+    background-color: #fafafa !important;
+	border: 1px solid hsl(0,0%,80%);
+	box-shadow: #2684ff;
+	&:focus{
+		border: 1.5px solid @focus-color;
+	}
+}
+input{
+	height: unset !important;
+}
+::placeholder {
+	color: hsl(0,0%,50%) !important;
+}
+.btnbgset{
+	color: @white-color;
+	float: right;
+	margin: @padding - 5 @padding @zero @zero !important;
+	background-color: @header-color;
+	border: 1px solid @white-color;
+	&:hover{
+		color: @white-color;
+		background-color: @header-color;
+		border: 1px solid @header-color;
+	}
+	&:focus{
+		color: @white-color;
+		border: 1px solid @header-color !important;
+	}
+}
+.closeicon{
+	text-align: center;
+	padding: @padding;
+}
+
+.disabledInputRight{
+	padding-right: @zero;
+}
+.disabledInputLeft{
+	padding-left: @zero;
+}
+
+.textFiledMargin{
+	p{
+		font-style: italic;
+		font-weight: 600;
+	}
+	margin-bottom: @margin - 5px;
+}
+.selectFiledMargin{
+	margin-bottom: @margin - 5px; 
+}
+.dateFiledMargin{
+   margin-bottom: @margin - 5px;
+}
+
+
+.clearBtn{
+	font-size: 12px; float: right; cursor: pointer;
+}
+
+
+@media @mobile{
+
+	.disabledInputLeft{
+		padding-left: @padding;
+	}
+	.disabledInputRight{
+        margin-bottom: -17px;
+		padding-right: @padding;
+	}
+	
+	.bgcontent{
+		padding-top: @padding * 4;
+	}
+	.collapseTatile{
+		h6{
+       font-size: @padding;
+	}
+ }
+ .closeicon{
+	text-align: left;
+ }
+ .dsuentrybtn{
+	 padding-top: 35px;
+ }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button 
+{
+	 -webkit-appearance: none; margin: 0; 
+	}
+	 
+	.dateWidth{
+	
+	}
+	.mapIcon{
+		color: red;
+		padding-right: @padding - 5px;
+
+	}
+	.databorder{
+		background: ~"url('./calendaricon.png')";
+	}
+
+	// dataes styles
+	.databorder{
+    
+        background-position: 98%;
+        background-size: 22px;
+        background-repeat: no-repeat;
+        padding-right: @padding - 9px;
+        padding-left: @padding - 5px;
+
+
+		width: @width-pertg;
+		outline-color: @white-color;
+		background-color: #fafafa;
+		border: 1px solid  hsl(0,0%,80%);
+		height: @height - 10px !important;
+		border-radius: @radius;
+		&:focus{
+			border: 2px solid @focus-color;
+
+		}
+	}
+	.xxx {
+		input{
+		  height: @height - 10px !important;
+		  background-color: #fafafa;
+		  &:focus{
+			border: 4px solid #2684ff;
+
+		}
+		} 
+	
+	}
+
+	.errorClass {
+
+		& :global .css-1aya2g8{
+             border-color: rgb(212, 0, 0) !important;
+		}
+        color: rgb(212, 0, 0);
+        font-size:12px;
+        height: @height / 2;
+}
+
+	.errorforDate {
+		border:1px solid red;
+	}
+	.apllyGreen {
+		border:1px solid green;
+	}
+	@media @mobile{
+		.bgcontent{
+			padding-left: @padding;
+		}
+	}
+	.closbtnlab {
+		position: relative;
+		padding: @zero 3px @zero 3px;
+		top: -8px;
+		right: 9px;
+		background-color: #9694943d;
+		border-radius: @padding + 7px;
+		cursor: pointer;
+		
+	}
+.builddate {
+	font-weight: 100;
+    font-size: @font - 8px;
+    padding-left: @padding + 2px;
+    color: grey;
+}
+
+
+
+.symptomsList{
+	input{
+		z-index: 0px !important;
+	}
+	.inputIncrement{
+		width: 50px !important;
+		text-align: center;
+		background-color: #fafafa !important;
+		border: 1px solid hsl(0,0%,80%);
+		box-shadow: #2684ff;
+		border-radius: 4px !important;
+		&:focus{
+			border: 1.5px solid @focus-color;
+		}
+	}
+	.btnIncrement{
+		button{
+			&:hover{
+				background-color: #292b2c;
+			}
+			background-color: #52585a;
+			color: #fff;
+		}
+	}
+	.inputIncrementLabel{
+		position: relative;
+		left: 50px;
+	}
+	& :global .form-control{
+       z-index: 0 !important;
+	}
+}
+
+.inputIncrement{
+	width: 50px !important;
+	z-index: 0 !important;
+	text-align: center;
+	background-color: #fafafa !important;
+	border: 1px solid hsl(0,0%,80%);
+	box-shadow: #2684ff;
+	border-radius: 4px !important;
+	&:focus{
+		border: 1.5px solid @focus-color;
+	}
+}
+
+
+.vitalsData{
+	padding: 25px 0px 20px 0px;
+	& :global .form-group{
+		margin: 0px !important;
+	}
+}
+
+.inputWidth{
+input{
+	width: 75px !important;
+}
+}
+.svgBarCode{
+  svg{
+	  height: 80px;
+  }
+}
+.error{
+	    padding: 0;
+    font-size: 12px;
+    color: red;
+}

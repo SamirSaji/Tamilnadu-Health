@@ -1,0 +1,251 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+.logoCdsp{
+  width: 60px;
+  height: 60px;
+}
+.logo1{
+  width: 75px;
+  
+}
+.header {
+  background: @base-color;
+  color: @white-color;
+}
+.logincontainer {
+  // height: 420px;
+  margin-top: @padding;
+  padding-top: @padding;
+  background-color: #ffffff94;
+  color: black;
+}
+.loginLink {
+  a {
+    color: black;
+  }
+  text-align: @center;
+  padding: @padding;
+  margin: @padding 0px @padding;
+}
+.title {
+  text-align: @center;
+}
+.input {
+  padding: @padding;
+}
+.textaea {
+  padding-top: @padding;
+  padding-bottom: @padding;
+}
+.loginlogo {
+  text-align: @center;
+}
+.loginimg {
+  margin-top: -60px;
+  width: 85px;
+  border-radius: 50px;
+  background-color: green;
+}
+.inputlogin {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  border-radius: 0px;
+  padding-left: 0px;
+  color: black;
+}
+.inputlogin:focus {
+  top: -18px;
+  border-bottom: 2px solid #0275d8;
+  background: transparent;
+  transition: border 0.5s;
+}
+
+ul {
+  padding-top: @padding;
+}
+.subtitle {
+  padding-top: @padding;
+}
+.contact {
+  text-align: right;
+}
+.headerTitle {
+  text-align: center;
+  padding: @padding * 2 @padding 0px;
+  h2 {
+    color: @white-color;
+    font-size: 25px;
+  }
+}
+
+.logincontant {
+  margin: 0px @padding;
+}
+.headerbg {
+  background-color: transparent;
+}
+.logincont {
+  height: 420px;
+  margin-top: @padding;
+  background: #ffffff94;
+  padding-top: @padding+15px;
+  border: 0px;
+}
+.logintitle {
+  strong {
+    font-size: 26px;
+  }
+  padding: @padding;
+}
+.loginbutn {
+  border-radius: @padding*3;
+  outline: none;
+}
+.logo {
+  padding-left: @padding+10px !important;
+  padding: @padding;
+}
+.map{
+  padding: @padding;
+  width: 230px;
+}
+.helpline{
+  width: 70px;
+}
+@media @mobile {
+  .logoCdsp{
+    width: 127px !important;
+    height: 100px;
+  }
+  .logincont {
+    display: none;
+  }
+  .headerTitle {
+    text-align: right !important;
+    padding: @padding 0px;
+    h2{
+      display: none;
+    }
+  }
+  .logincontant {
+    margin-top: 0px !important;
+  } 
+  .logincontainer{
+    height: unset;
+
+  }
+}
+@media @tablet {
+  .map{
+    width: 150px;
+    padding-top: @padding*2;
+  }
+  .helpline{
+    width: 45px;
+    padding-top: @padding;
+  }
+  .headerTitle h2 {
+    font-size: 17px;
+  }
+  .title {
+    font-size: 15px;
+  }
+  .subtitle {
+    h6 {
+      font-size: 12px;
+    }
+    font-size: 12px;
+  }
+  .line {
+    margin-bottom: 6px;
+    margin-top: 6px;
+  }
+}
+@media @desktop {
+  .inputWidth{
+    padding: 0px 50px 0px 50px;
+  }
+  .map{
+    width: 180px;
+    padding-top: @padding*2;
+  }
+  .helpline{
+    width: 55px;
+    padding-top: @padding;
+  }
+  .headerTitle h2 {
+    font-size: 21px;
+  }
+  .title {
+    font-size: 17px;
+  }
+  .subtitle {
+    h6 {
+      font-size: 15px;
+    }
+    font-size: 13px;
+  }
+  .line {
+    margin-bottom: 6px;
+    margin-top: 6px;
+  }
+}
+@media @lgdesktop {
+  .inputWidth{
+    padding: 0px 50px 0px 50px;
+  }
+  .headerTitle h2 {
+    font-size: 22px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .subtitle {
+    h6 {
+      font-size: 16px;
+    }
+    font-size: 13px;
+  }
+}
+.loginLink{
+  a{
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 865px){
+  .logincont{
+    height: unset;
+
+  }
+}
+
+.textaea input:required:valid {
+  background-color: green;
+}
+.textaea input:invalid {
+  span{
+    display: block !important;
+  }
+} 
+
+.textaea input:optional {
+  border-left-color: #999;
+}
+
+
+@media only screen and (min-width: 1500px)
+{
+  .logincontant {
+    margin: 0px 250px;
+}
+  .headerbg{
+    margin: 0px 250px;
+  }
+}

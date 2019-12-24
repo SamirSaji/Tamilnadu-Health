@@ -1,0 +1,354 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+.bgcontentProf {
+  padding-top: @padding * 5 - 1px;
+  padding-left: @padding * 6 + 6px;
+  
+    .dailyTital {
+      margin: @margin + 5px @zero;
+      p {
+        background-color: @grey-color;
+        padding: @radius - 1px @padding - 7px;
+      }
+      .instType {
+        padding-right: @zero;
+      }
+      .instTypeName {
+        padding-left: @zero;
+      }
+    }
+    .inpatient {
+      border-top: 2px solid @header-color;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: @padding * 2 - 5px @padding @padding * 4;
+      margin: @margin @zero;
+      border-radius: @radius;
+    }
+    label{
+      font-size: @padding - 1px !important;
+    }
+    hr{
+      width: @width-pertg;
+      border-top: 1px solid #ddd;
+    }
+}
+    .dailyTital {
+        margin: @margin @zero;
+        p {
+          background-color: @grey-color;
+          padding: @radius - 1px @padding - 7px;
+        }
+        .instType {
+          padding-right: @zero;
+        }
+        .instTypeName {
+          padding-left: @zero;
+        }
+      }
+.reportFilter{
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: @radius;
+        padding: @padding;
+        border-top: 2px solid @header-color;
+        padding: @padding * 2 @padding;
+    }
+    
+    .inputstyle{
+    margin-bottom: 10px;
+    height: 33px !important;
+    font-size: 14px;
+    background-color: #fafafa !important;
+    border: 1px solid hsl(0,0%,80%);
+    box-shadow: @header-color;
+    &:focus{
+      border: 1.5px solid @header-color;
+    }
+  }
+  .tital{
+      margin-top: @margin;
+      text-align: @center;
+      font-size: @font;
+  }
+  .inputOffset{
+    margin-top: @margin * 2;
+    td{
+      border: @zero !important;
+    }
+  }
+  .btnStyles{
+    margin-bottom: @margin;
+    text-align: @right;
+  }
+  .roles{
+    margin: @margin @zero;
+    button{
+      width: @width-pertg;
+      background: transparent;
+      border: 2px solid @header-color;
+      color: @header-color;
+      padding: @padding - 7px;
+      border-radius: @radius;
+      font-weight: 600;
+      &:hover{
+        color: @white-color;
+        border: 2px solid #43A047;
+        background-color: #43A047;
+      } 
+    }
+  }
+  .selectList{
+    & :global .css-2o5izw{
+      box-shadow: unset !important;
+          border-color: @header-color !important;
+          border: 2px solid;
+    }		
+    margin-bottom: @margin;
+  }
+  .disableInput{
+     background-color: #ddd !important;
+  }
+  .underline{
+    width: @width !important;
+    border: @padding - 5px;
+    border-top: @radius - 1px solid @header-color !important;
+    border-radius: @radius * 2;
+    margin-top: @zero;
+  }
+  .subunderline{
+    width: @width-pertg !important;
+    border: @padding - 5px;
+    border-top: @radius - 1px solid @header-color !important;
+    border-radius: @radius * 2;
+    margin-top: @zero;
+  }
+  .header{
+    margin: @margin @zero;
+    text-align: @center;
+  }
+  .editBtn{
+  background-color: @header-color;
+  color: @white-color;
+  font-size: @font - 9px;
+  outline: none !important;
+  border: @zero;
+  border-radius: @radius * 6;
+  cursor: pointer;
+  float: right;
+  transition: 0.5s;
+  &:hover{
+    background-color: @header-color;
+    font-size: @font - 7px;
+    padding: 1px @padding - 7px;
+    transition: 0.5s;
+  }
+  }
+.savebtn{
+  padding: 3px @padding - 7px;
+    font-size: @font - 6px;
+    float: right;
+    background-color: #5cb85c;
+    color: @white-color;
+    border: none;
+    cursor: pointer;
+    &:hover{
+      background-color: #43A047;
+      color: @white-color;
+    }
+}  
+.closebtn{
+    margin-right: @radius;
+    padding: 3px @padding - 7px;
+    font-size: @font - 6px;
+    float: right;
+    background-color: gray;
+    color: @white-color;
+    border: none;
+    cursor: pointer;
+    &:hover{
+      background-color: #484848;
+      color: @white-color;
+    }
+}
+.hidecard{
+  transition: 0.5s;
+  overflow: auto;
+  overflow-y: hidden;
+}
+.hidebg{
+  background-color: #ddd;
+  padding: @padding @padding * 5;
+  transition: 0.5s;
+}
+.redioBtn{
+  h6{
+    padding: @radius + 1px @radius + 1px;
+    font-weight: 600;
+  }
+  margin: 1px @margin;
+}
+.hideSelectboxcard{
+  transition: 0.5s;
+}
+
+@media @mobile {
+  .profileDetls{
+    padding-right: @padding !important;
+  }
+    .bgcontentProf {
+      padding-top: @padding * 6;
+      padding-left: @padding;
+    }
+    .hidebg{
+      padding: @padding @padding;
+    }
+    .reportText{
+      display: none;
+    }
+    .dwnldbtn{
+      right: 15px !important;
+    }
+    .titalHeader{
+      margin: 0px 15px;
+    }
+}
+
+
+.inpatient{
+  .hospitalIcon{
+    margin-top: 25px;
+    background-color: @header-color;
+    padding: 15px 20px;
+    border-radius: 50px;
+    color: #fff;
+  }
+  .editIcon{
+    &:hover{
+      background-color: @header-color;
+      padding: 8px 8px 8px 10px;
+      border-radius: 16px;
+      color: #fff;
+      font-size: 20px;
+    }
+    position: absolute;
+    right: 15px;
+    top: 35px;
+    font-size: 25px;
+    color: @header-color;
+    transition: 0.3s;
+  }
+}
+
+.databorder {
+  background: ~"url('../../DSUEntry/stylesheets/calendaricon.png')";
+  background-position: 98%;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  padding-right: @radius - 1px;
+  padding-left: @padding - 5px;
+
+  width: @width-pertg;
+  outline-color: @white-color;
+  background-color: #fafafa;
+  border: 1px solid hsl(0, 0%, 80%);
+  height: 33px !important;
+  border-radius: @radius;
+  &:focus {
+    border: 2px solid @focus-color;
+  }
+}
+
+.radioBtnStyles{
+  margin: 5px 10px;
+  h6{
+    font-weight: 500;
+    padding-left: 8px;
+    padding-top: 3px;
+  }
+}
+
+
+input[type="text"]:disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+}
+input[type="textarea"]:disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+}
+.form-control:disabled{
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+
+
+.titalHeader{
+  h5{
+    font-size: 19px !important;
+  }
+  background-color: #ccc;
+  padding: 12px 15px 0px 15px; 
+  margin-bottom: 15px;
+}
+.selectHight{
+  margin-bottom: 15px;
+  & :global .css-1aya2g8{
+      height: 33px !important;
+      min-height: 25px !important;
+  }
+}
+
+.dateWidth {
+  & :global .react-datepicker__input-container {
+    width: 100%;
+  }
+  & :global .react-datepicker-wrapper{
+    width: 100%;
+  }
+}
+
+
+.dwnldbtn {
+  button {
+    outline: none;
+    color: @header-color;
+    padding: @padding - 7px @padding;
+    cursor: pointer;
+    font-size: @font - 5px;
+    background-color: transparent;
+    border-radius: @radius;
+    border: 1.4px solid @header-color;
+    transition: 0.4s;
+    &:hover {
+      background-color: @header-color;
+      color: @white-color;
+    }
+    a{
+      color: @header-color;
+      &:hover{
+        color: @white-color;
+      }
+    }
+  }
+
+}
+.tableInput{
+  width: 100%;
+  height: 100% !important;
+  border: unset;
+  font-size: 12px;
+}
+.tableAccess {
+  td{
+  padding: 11px 10px 2px 11px !important;
+  vertical-align: unset !important;
+  border: 1px solid #bbbbbb !important;
+  }
+}
+.tableAccess {
+  th{
+  padding: 11px 10px 2px 11px !important;
+  vertical-align: unset !important;
+  border: 1px solid #bbbbbb !important;
+  }
+}

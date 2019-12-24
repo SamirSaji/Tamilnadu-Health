@@ -1,0 +1,26 @@
+@import "../../../assets/styles/Common/variables.less";
+#upBtn{
+	outline: none;
+}
+.upBtn{
+	&:hover{
+		box-shadow: @header-color 0px 0px 13px;
+		color: @white-color;
+		background-color: @header-color;
+	}
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: @font - 2px;
+	border: none;
+	outline: none;
+	background-color: @header-color;
+	color: @white-color;
+	cursor: pointer;
+	padding: @padding;
+	border-radius: 10px;
+	padding: @padding - 7px @padding - 5px;
+    outline: none;
+}

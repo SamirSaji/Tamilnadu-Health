@@ -1,0 +1,272 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+.maxCount{
+  margin-left: 15vw;
+  margin-top: .5rem;
+  color: red;
+  font-size: 13px;
+  width: 300px;
+}
+
+th {
+  font-size: @font - 7px;
+}
+.editIcon {
+  cursor: pointer;
+  font-size: @font;
+  &:hover {
+    color: #484848;
+  }
+}
+.deleteIcon {
+  cursor: pointer;
+  font-size: @font;
+  text-align: center;
+  &:hover {
+    color: @red-color;
+  }
+}
+
+.bgcontent {
+  // background-color: @white-color;
+  padding-top: @padding * 5 - 1px;
+	padding-left: @padding * 6 + 6px;
+}
+
+.ResultEllipsis {
+  & :global .css-1492t68 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: @width - 10%;
+    overflow: hidden;
+  }
+}
+.helpIcon{
+  display: none;
+  float: left;
+}
+@media @mobile {
+  .pageMenu{
+    display: none;
+  }
+  .helpIcon {
+    display: block !important;
+  }
+  .bgcontent {
+    padding-top: @padding * 4 + 6px;
+    padding-left: @padding;
+  }
+}
+
+.pageNation {
+  padding-top: @padding;
+  & :global .page-item.active .page-link {
+    z-index: unset;
+  }
+  & :global .pagination {
+    margin-bottom: @zero;
+  }
+  & :global .page-item.active .page-link {
+    background-color: @header-color;
+    border-color: @header-color;
+  }
+}
+
+.search {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: @zero;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: @center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.subHeader {
+  padding: @padding - 5px @zero;
+  background-color: @white-color;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn {
+  color: @header-color;
+  padding: @padding - 7px @padding;
+  cursor: pointer;
+  font-size: @font - 5px;
+  background-color: transparent;
+  border-radius: @radius;
+  border: 1.4px solid @header-color;
+  transition: 0.4s;
+  &:hover {
+    background-color: @header-color;
+    color: @white-color;
+  }
+  a{
+    color: @header-color;
+    &:hover{
+      color: @white-color;
+    }
+  }
+}
+
+.dwnldbtn {
+  button {
+    outline: none;
+    color: @header-color;
+    padding: @padding - 7px @padding;
+    cursor: pointer;
+    font-size: @font - 5px;
+    background-color: transparent;
+    border-radius: @radius;
+    border: 1.4px solid @header-color;
+    transition: 0.4s;
+    &:hover {
+      background-color: @header-color;
+      color: @white-color;
+    }
+    a{
+      color: @header-color;
+      &:hover{
+        color: @white-color;
+      }
+    }
+  }
+
+}
+
+
+// dataes styles
+.databorder {
+  background: ~"url('../../DSUEntry/stylesheets/calendaricon.png')";
+  background-position: 98%;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  padding-right: @radius - 1px;
+  padding-left: @padding - 5px;
+
+  width: @width-pertg;
+  outline-color: @white-color;
+  background-color: #fafafa;
+  border: 1px solid hsl(0, 0%, 80%);
+  height: @height - 10px !important;
+  border-radius: @radius;
+  &:focus {
+    border: 2px solid @focus-color;
+  }
+}
+.tableDatePik {
+  .databorder {
+    width: @width + 25px !important;
+    background: unset !important;
+  }
+}
+
+.tableDisable {
+  background-color: #ddd !important;
+  cursor: not-allowed;
+
+  & :global .custom-select {
+    cursor: not-allowed;
+    background-color: #ddd;
+    pointer-events: none;
+  }
+  & :global .form-control {
+    cursor: not-allowed;
+    background-color: #ddd;
+    pointer-events: none;
+  }
+  .editIcon {
+    pointer-events: none;
+  }
+  .deleteIcon {
+    pointer-events: none;
+  }
+  .tableDatePik {
+    pointer-events: none;
+    cursor: none;
+  }
+}
+.Criteria {
+  padding-top: @padding;
+  border-radius: @radius;
+  background-color: @white-color;
+  padding-bottom: @padding + 5px;
+  margin: @padding * 2 @zero;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lineResult {
+  border-radius: @radius;
+  margin-bottom: @padding * 2;
+  background-color: @white-color;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pricetag {
+  padding-left: @zero;
+  height: @height - 12px;
+  .tagg {
+    display: inline-block;
+
+    width: auto;
+    height: @height - 12px;
+
+    background-color: @header-color;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    border-radius: 5px 0px 0px 0px;
+    position: absolute;
+    color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: @font - 4px;
+    line-height: 38px;
+
+    padding: @zero @padding * 2 @zero @padding - 5px;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      right: -19px;
+      width: @zero;
+      height: @zero;
+      border-top: @padding + 5px solid transparent;
+      border-bottom: 18px solid;
+      border-left: @padding + 5px solid @header-color;
+      background-color: @white-color;
+      color: @white-color;
+    }
+  }
+}
+
+.searchTag {
+  & :global .form-control {
+    z-index: 0;
+  }
+  input{
+    &:focus{
+      border: 2px solid @focus-color !important;
+    }
+  }
+}
+.thead{
+  background-color: #cccccc78;
+}
+.resetBtn{
+  button{
+  position: absolute;
+  bottom: 0px;
+  padding: 0px 5px;
+  /* border: 1px solid #025aa5; */
+  /* color: #025aa5; */
+  /* background-color: transparent; */
+  border-radius: 5px;
+  }
+}

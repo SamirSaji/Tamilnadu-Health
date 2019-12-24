@@ -1,0 +1,137 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+body {
+  background-color: #fff;
+  height: 100vh;
+}
+.dwnldbtn {
+  button {
+    outline: none;
+    color: @header-color;
+    padding: @padding - 7px @padding;
+    cursor: pointer;
+    font-size: @font - 5px;
+    background-color: transparent;
+    border-radius: @radius;
+    border: 1.4px solid @header-color;
+    transition: 0.4s;
+    &:hover {
+      background-color: @header-color;
+      color: @white-color;
+    }
+    a{
+      color: @header-color;
+      &:hover{
+        color: @white-color;
+      }
+    }
+  }
+
+}
+.databorder{
+background-position: 98%;
+background-size: 22px;
+background-repeat: no-repeat;
+padding-right: @padding - 9px;
+padding-left: @padding - 5px;
+width: @width-pertg;
+outline-color: @white-color;
+background-color: #fafafa;
+border: 1px solid  hsl(0,0%,80%);
+height: @height - 10px !important;
+border-radius: @radius;
+&:focus{
+border: 2px solid @focus-color;
+}
+}
+.bgcontent {
+  // background-color: @white-color;
+  padding-top: 74px;
+  padding-left: 96px;
+
+
+  .btnSubmit {
+    // text-align: right;
+    // position: absolute;
+    bottom: 30px;
+    right: 15px;
+    margin-right: 15px;
+  }
+
+  .inpatient {
+    border-top: 2px solid @header-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    th,
+    td {
+      border: 1px solid #0000005c !important;
+    }
+    .elisaHeader{
+        padding: 0px 0px 0px 0px;
+        text-align: center;
+    }
+    .headerColor{
+    background-color: #cccccc5c;
+    }
+  }
+}
+
+.tableHead{
+  width: 75px;
+  text-align: center;
+}
+.tHeader{
+  width: 330px;
+  text-align: center;
+  // padding: 20px 15px !important;
+}
+
+.inputFiled{
+    // height: 72px !important;
+    // width: 76px;
+    outline: none;
+    border: 0px;
+    border-radius: 0px;
+} 
+.Total{
+  background: #00695c24 !important;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.inputDataTable{
+  padding: 0 !important;
+}
+
+.submitBtn{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media @mobile {
+  .submitReport{
+    bottom: 0px !important;
+    position: unset !important;
+  }
+  
+  .bgcontent {
+    padding-left: @padding;
+    padding-top: @padding * 4 + 4px;
+  }
+}
+
+.errorClass{
+  font-size: 12px;
+  color: red;
+}
+
+.mainTD>tr>td>input {
+  text-align: right;
+}
+
+.submitReport{
+  text-align: right;
+  position: absolute;
+  bottom: 30px;
+}

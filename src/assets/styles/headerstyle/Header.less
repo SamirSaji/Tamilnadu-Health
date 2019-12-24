@@ -1,0 +1,322 @@
+@import "../Common/variables.less";
+.signup{
+	&:hover{
+		background-color: #02544acf;
+	}
+	float: right;
+	padding: @padding - 2px @padding - 5px;
+	cursor: pointer;
+}
+.test{
+	overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    width: @width + 50px;
+	display:inline-block;
+	color: #fff;
+}
+.headerbg{
+	a{
+		color: @white-color;
+		&:hover{
+			color: @white-color;
+		};
+	}
+	background-color: @header-color;
+	position: fixed;
+    z-index: 4;
+    width: @width-pertg;
+}  
+.logo{ 
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+}
+.logout{
+	width: @width - 60px;
+}
+.bglogo{
+    // border-bottom:1px solid #464a4c;
+	// background-color: #38393a;
+}
+.DropdownItem{
+	&:hover{
+		color: @black-color !important;
+		background-color: @grey-color;
+	}
+	&:focus{
+		background-color: @header-color;
+	}
+	z-index: 1000;
+	color: @header-color !important;
+	font-weight: 500;
+	text-align: @center;
+	
+}
+.menu{
+	padding: @padding - 10px;
+	min-width: @width-pertg - 5%;
+}
+.sidegb{
+	background-color: #38393a;
+}
+
+.maintitle{
+	padding-left: @padding - 10px;
+	// padding: 10px 8px 0px 8px;
+	text-align: @left;
+	h5{
+		// font-size: 20px !important;
+		color: @white-color;
+	}
+}
+
+// mobilenav ba
+.sideBarMenu{
+	padding-top: @padding + @padding !important;
+	padding: @zero;
+	height: @height-pertg;
+	background-color: #292b2c;
+	transition: 0.5s;
+}
+.closeSideBar{
+padding: @zero;
+background-color: #0000009e; 
+opacity: 0;
+transition: 5.5s;
+}
+
+.sidenav {
+	color : @white-color;
+    height: @height-pertg;
+    width: @zero;
+    position: fixed;
+    z-index: 1; 
+    top: 64px;
+	left: @zero;
+	overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: @padding * 4;
+}
+
+.sidenav a {
+    padding: @padding - 5px @padding * 2 + 2px;
+    text-decoration: none;
+    font-size: @font - 5px;
+    color: @white-color;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+	background-color: @header-color;
+			color: @white-color;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: @zero;
+    right: @zero;
+    font-size: @font + 5px;
+    margin-left: @margin * 3 + 5px;
+}
+.user{
+	color: @white-color;
+}
+
+.menuicon{
+	color: @white-color;
+	padding-top: @padding - 7px;
+	display: none;
+
+}
+.cdspImg{
+	text-align: @right;
+}
+.logotn{
+	width: @width - 33px;
+}
+
+@media @mobile{
+	.cdspImg{
+		display: none;
+	}
+	.sidenavNew{
+		display: none;
+	}
+	.opneIconNew{
+		display: none;
+	}
+	.user{
+		display: none;
+	}
+	.bglogo{
+		background-color: transparent;
+	}
+	.menuicon{
+		display: block;
+	}
+	.signup{
+		padding: @padding - 7px @padding - 5px;
+	
+	}
+	.logo{
+		padding-top: @zero;
+	}
+	.test{
+		width: unset;
+	}
+	.maintitle{
+		padding: @zero @padding * 3 - 5px @zero @zero;
+		text-align: @right;
+	}
+	.logotn{
+		width: @width - 15px;
+		position: absolute;
+		right: 28px;
+		top: 12px;
+		background-color: @header-color;
+		border-radius: @radius * 10;
+		padding: 1px @radius @radius - 2px @radius;
+	}
+	.emptySpace{
+		display: none;
+	}
+}
+@media @tablet{
+	.sidenav{
+		display: none;
+	}
+	.sidenavNew{
+		top: 72px !important;
+	}
+	.opneIconNew{
+		margin: @zero @margin - 1px @zero @margin - 6px !important;
+	}
+	.maintitle{
+		padding-bottom: @zero;
+		h2{
+			font-size: @font - 8px !important;
+		}
+	}
+	.user{
+		display: none;
+	}
+	.signup{
+		padding: @padding - 3px @padding - 5px;
+		width: unset;
+	}
+	.logo{
+		padding-top: @padding - 11px;
+	}
+	.test{
+		width: unset;
+	}
+}
+
+@media @desktop{
+	.sidenav{
+		display: none;
+	}
+	.maintitle{
+		h2{
+			font-size: @font - 4px !important;
+		}
+	}
+	
+}
+
+
+// New sidebar
+.sidenavNew {
+	color : #fff;
+	// height: @width-pertg;
+	height: auto;
+    // width: 6%;
+    position: fixed;
+    z-index: 1; 
+    top: 74px;
+	left: 0;
+	overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: @padding * 4;
+}
+
+.sidenavNew a{
+	a{
+       color: @white-color;
+	}
+    padding: @padding - 3px @padding @padding - 3px  @padding * 2;
+    text-decoration: none;
+    font-size: @font -3px;
+    color: @white-color;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenavNew a:hover {
+	background-color:#0f1113b8;
+	color: @white-color;
+}
+
+.sidenavNew .closebtnNew {
+    position: absolute;
+    top: @zero;
+    right: @zero;
+    font-size: @font + 5px;
+    margin-left: @margin * 4 - 10px;
+} 
+.sideBarMenuNew{
+	i{
+		font-size: 22px;
+	}
+	padding-top: @padding !important;
+	padding: @zero;
+	height: @height-pertg;
+	background-color: #292b2c;
+	transition: 0.5s;
+} 
+.closeSideBarNew{
+    padding: @zero;
+    background-color: #0000009e; 
+    opacity: 0;
+    transition: 5.5s;
+    }
+.muneListNew{
+	transition: 0.5s;
+    position: absolute; 
+    padding-left: @padding + 6px;
+    }
+.opneIconNew{
+	&:hover{
+	background-color: #065047;
+	}
+	padding: 8px 10px;
+    margin-left: 8px !important;
+    border-radius: 25px;
+    margin-right: 22px !important;
+	color: @white-color;
+    font-size: @font + 5px;
+    cursor: pointer;
+    margin: @zero @margin * 3 - 5px @zero @margin;
+    position: relative;
+    top: 8px;
+    }
+
+
+.onchagestyles{
+    width: 15%;
+    .muneList{
+         display: none;
+        }
+    }
+	.active{
+		background-color: #025aa5
+		;
+	}
+
+	.active{
+		background-color: #0f1113b8;
+    border-left: 5px solid @header-color;
+	}

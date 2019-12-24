@@ -1,0 +1,169 @@
+@import "../../../../assets/styles/Common/variables.less";
+
+td,
+th {
+  border: 1px solid #dadada !important;
+
+  input {
+    border: unset !important;
+  }
+}
+
+th {
+  text-align: center;
+}
+
+.databorder {
+  background: ~"url('./calendaricon.png')";
+}
+
+.markred {
+  color: red;
+}
+
+.tblBtn {
+  cursor       : pointer;
+  padding      : 5px;
+  color        : white;
+  border-radius: 50%;
+  text-emphasis: center;
+}
+
+.dwnldbtn {
+  button {
+    outline         : none;
+    color           : @header-color;
+    padding         : @padding - 7px @padding;
+    cursor          : pointer;
+    font-size       : @font - 5px;
+    background-color: transparent;
+    border-radius   : @radius;
+    border          : 1.4px solid @header-color;
+    transition      : 0.4s;
+
+    &:hover {
+      background-color: @header-color;
+      color           : @white-color;
+    }
+
+    a {
+      color: @header-color;
+
+      &:hover {
+        color: @white-color;
+      }
+    }
+  }
+
+}
+
+.report_btn {
+  text-align        : center;
+  height            : auto;
+  margin            : 10%;
+  color             : #00695C;
+  border-color      : #00695C;
+  border-width      : 3px;
+  border-style      : solid;
+  padding           : 10px 0px;
+  border-radius     : 16px;
+  -webkit-transition: 0.4s;
+  -o-transition     : 0.4s;
+  transition        : 0.4s;
+}
+
+.report_btn :hover {
+  background-color: #00695C;
+  color           : white;
+  cursor          : pointer;
+}
+
+.btn {
+  color           : @header-color;
+  padding         : @padding - 7px @padding;
+  cursor          : pointer;
+  font-size       : @font - 5px;
+  background-color: transparent;
+  border-radius   : @radius;
+  border          : 1.4px solid @header-color;
+  transition      : 0.4s;
+
+  &:hover {
+    background-color: @header-color;
+    color           : @white-color;
+  }
+
+  a {
+    color: @header-color;
+
+    &:hover {
+      color: @white-color;
+    }
+  }
+}
+
+/*dataes styles*/
+.databorder {
+
+  background-position: 98%;
+  background-size    : 22px;
+  background-repeat  : no-repeat;
+  padding-right      : @padding - 9px;
+  padding-left       : @padding - 5px;
+  margin-left: 7px;
+
+  width           : @width-pertg;
+  outline-color   : @white-color;
+  background-color: #fafafa;
+  border          : 1px solid hsl(0, 0%, 80%);
+  height          : @height - 10px !important;
+  border-radius   : @radius;
+
+  &:focus {
+    border: 2px solid @focus-color;
+
+  }
+}
+
+.butt {
+  text-align    : right;
+  padding-bottom: 20px;
+
+  button {
+    background-color: green;
+    color           : white;
+  }
+
+
+}
+
+.inpatient {
+  border-top   : 2px solid @header-color;
+  box-shadow   : 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+  padding      : 15px 15px;
+  margin       : 30px;
+  border-radius: 5px;
+  width        : 100%;
+
+  th,
+  td {
+    border: 1px solid #0000005c !important;
+  }
+
+  .elisaHeader {
+    padding   : 0px 0px 0px 0px;
+    text-align: center;
+  }
+
+  .headerColor {
+    background-color: #cccccc5c;
+  }
+}
+
+.underline {
+  width        : 107px !important;
+  border       : @padding - 5px;
+  border-top   : @radius - 1px solid @header-color  !important;
+  border-radius: @radius * 2;
+  margin-top   : @zero;
+}

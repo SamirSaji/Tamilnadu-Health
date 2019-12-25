@@ -12,7 +12,8 @@ import {
   Form,
   FormGroup,
   Input,
-  Label
+  Label,
+  Container
 } from "reactstrap";
 // import { AvForm, AvFeedback, AvField, AvGroup,AvInput} from 'availity-reactstrap-validation';
 
@@ -155,59 +156,106 @@ class Refresh extends React.Component {
               </Col>
             </Row>
           </div>
-          <Row>
-            <Col xs={{ size: 10, offset: 1 }} >
-              <div>
-                <Card>
-                  <CardBody>
-                    <h3 className={styles.errorHeadSubmit}>Raise An Issue</h3>
-                    <Col
-                      className={styles.inputUsername}
-                      md={{ size: 4, offset: 4 } }
-                    >
-                      <Form className={styles.formName}>
-                        <FormGroup>
+
+          <div>
+            <Row
+              style={{
+                padding: "20px 0px 50px 0px"
+              }}
+            >
+              <Col xs={{ size: 10, offset: 1 }}>
+                <div>
+                  <Card
+                    style={{
+                      borderRadius: "10px"
+                    }}
+                  >
+                    <CardBody>
+                      <h3 className={styles.errorHeadSubmit}>Raise An Issue</h3>
+
+                      <Col
+                        className={styles.inputUsername}
+                        xs={{ size: 10, offset: 1 }}
+                      >
+                        <Row>
                           <Label
                             style={{
                               fontWeight: "400",
                               fontSize: "15px",
-                              float: "left"
+                              float: "left",
+                              padding: "10px 0px 0px 0px",
+                              margin: "0px 0px 5px 0px"
                             }}
                           >
-                            UserName
+                            Username
                           </Label>
+                        </Row>
+                        <Row>
+                          {" "}
                           <Input
                             type="text"
-                            name="email"
-                            id="exampleEmail"
-                            placeholder="UserName"
-                            required
-                            
+                            name="text"
+                            placeholder=" Enter your username"
                           />
-                          <Label className={styles.labelButton}
+                        </Row>
+                        <Row>
+                          {" "}
+                          <Label
+                            className={styles.labelButton}
                             style={{
                               fontWeight: "400",
                               fontSize: "15px",
                               float: "left",
-                              paddingBottom: "10px"
+                              margin: "0px"
                             }}
                           >
                             Issue Type
                           </Label>
-                          <Button color="primary">Another</Button>
-                          <Button>another</Button>
-                          <Button>another</Button>
-                          <Button>another</Button>
-                        </FormGroup>
-                      </Form>
-                    </Col>
+                        </Row>
+                        <Row>
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>
+                              Return Issue
+                            </Button>
+                          </Col>{" "}
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>Other</Button>
+                          </Col>
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>
+                              500 Error
+                            </Button>
+                          </Col>
+                          <Col md="3" xs="12">
+                            {" "}
+                            <Button className={styles.buttonName}>
+                              Account Issue
+                            </Button>
+                          </Col>
+                        </Row>
 
-                    {/* <Col xs={{ size: 4, offset: 4 }}></Col> */}
-                  </CardBody>
-                </Card>
-              </div>
-            </Col>
-          </Row>
+                        <Row>
+                          <Col>
+                            <Button
+                              style={{
+                                backgroundColor: "#00695C",
+                                color: "#fff",
+                                margin: "15px 0px"
+                              }}
+                            >
+                              Submit
+                            </Button>
+                          </Col>
+                        </Row>
+                      </Col>
+
+                      {/* <Col xs={{ size: 4, offset: 4 }}></Col> */}
+                    </CardBody>
+                  </Card>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </div>
       </div>
     );

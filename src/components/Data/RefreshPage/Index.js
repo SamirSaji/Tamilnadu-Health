@@ -234,6 +234,52 @@ class Refresh extends React.Component {
                           </Col>
                         </Row>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <Row>
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>
+                              Return Issue
+                            </Button>
+                          </Col>{" "}
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>Other</Button>
+                          </Col>
+                          <Col md="3" xs="12">
+                            <Button className={styles.buttonName}>
+                              500 Error
+                            </Button>
+                          </Col>
+                          <Col md="3" xs="12">
+                            {" "}
+                            <Button className={styles.buttonName}>
+                              Account Issue
+                            </Button>
+                          </Col>
+                        </Row>
+
+
+
+
+
+
+
+
+
+
+
+
                         <Row>
                           <Col>
                             <Button

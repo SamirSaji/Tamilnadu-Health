@@ -25,7 +25,7 @@ class Refresh extends React.Component {
   handleSubmit = event => {
     alert("A name was submitted: " + this.state.value);
     alert("button value " + this.state.button);
-    userNameValid();
+    userNameValid(this.state.value, this.state.button);
     event.preventDefault();
   };
 
@@ -296,27 +296,36 @@ class Refresh extends React.Component {
   }
 }
 
-const userIssue = () => ({
-  issue: this.state.button
-});
-const userValue = () => ({
-  content: this.state.value
-});
 
+// const userValue = () => ({
+//   content: this.state.value,
+// })  ;
+
+// const userIssue = state => {
+//   return ({
+//     issue: this.setState.button,
+//   });
+// };
 const mapStateToProps = state => ({
   auth: state.auth
 });
-
-const userNameValid = async () => {
+const userNameValid = async (userValue,userIssue) => {
   const url = `${config.apiURL}/graphql`;
-  alert(userValue.content);
-  const query = `$mutation{
-    createUHCTickets(username :${userValue.content} , type : ${userIssue.issue}){
+  // alert(a+ '============' +b);
+  // const query = `$mutation{
+  //   createUHCTickets(username :${userValue} , type : ${userIssue}){
+  //     id
+  //   }
+  // }`;
+
+  const query = `$mutation($username : String!, $type: String!){
+    createUHCTickets(username :${userValue} , type : ${userIssue}){
       id
     }
   }`;
   await request(url, query)
     .then(async () => {
+      
       window.location.replace("/");
     })
     .catch(err => {

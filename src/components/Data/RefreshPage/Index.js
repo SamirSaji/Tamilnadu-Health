@@ -6,13 +6,28 @@ import { withRouter } from "react-router-dom";
 import { Col, Row, Button, Card, CardBody, Input, Label } from "reactstrap";
 import { request } from "graphql-request";
 import config from "../../../config";
-// import { AvField } from "availity-reactstrap-validation";
 
 class Refresh extends React.Component {
   constructor(props) {
     super(props);
     this.logmeOut = this.logmeOut.bind(this);
+    this.state = { value: "" };
+    this.state = { buttonText: "" };
   }
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+  handleFunc = (event, type) => {
+    this.setState({ button: type });
+  };
+
+  handleSubmit = event => {
+    alert("A name was submitted: " + this.state.value);
+    alert("button value " + this.state.button);
+    userNameValid();
+    event.preventDefault();
+  };
 
   reloadtoHome() {
     window.location.href = "/";
@@ -43,7 +58,7 @@ class Refresh extends React.Component {
               </h3>
             </Row>
             <Row className={styles.parent}>
-              <Col lg="4" md="4" xs="12">
+              <Col lg="4" e md="4" xs="12">
                 <div className={styles.child + " childHover "}>
                   <h5
                     style={{
@@ -98,7 +113,7 @@ class Refresh extends React.Component {
                       பொத்தானைக் கிளிக் செய்யவும்.
                     </li>
                   </ul>
-
+                  e
                   <a onClick={this.logmeOut}>
                     {" "}
                     <Button
@@ -185,29 +200,22 @@ class Refresh extends React.Component {
                         </Row>
                         <Row>
                           {" "}
-                          {/* <AvField
-                            name="name"
-                            label="Name"
-                            placeholder=" Enter your username"
-                            required
-                          /> */}
                           <Input
+                            value={this.state.value}
+                            onChange={this.handleChange}
                             type="text"
-                            name="text"
                             placeholder=" Enter your username"
                             style={{
                               borderRadius: "25px",
                               fontSize: "18px"
                             }}
                           />
-                          {/* <p>{inValidusername.content}</p> */}
                         </Row>
                         <Row>
                           {" "}
                           <Label
                             className={styles.labelButton}
                             style={{
-                              // fontWeight: "400",
                               fontSize: "15px",
                               float: "left",
                               margin: "0px",
@@ -220,29 +228,51 @@ class Refresh extends React.Component {
                         </Row>
                         <Row>
                           <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>
+                            <Button
+                              className={styles.buttonName}
+                              onClick={e => this.handleFunc(e, "500 Error")}
+                            >
                               500 Error
                             </Button>
                           </Col>{" "}
                           <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>
+                            <Button
+                              className={styles.buttonName}
+                              button=" Unable to save line entry"
+                              onClick={e =>
+                                this.handleFunc(e, " Unable to save line entry")
+                              }
+                            >
                               Unable to save line entry
                             </Button>
                           </Col>
                           <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>
-                              Unable to log in
+                            <Button
+                              className={styles.buttonName}
+                              button=" Unable to log in"
+                              onClick={e =>
+                                this.handleFunc(e, " Unable to login")
+                              }
+                            >
+                              Unable to login
                             </Button>
                           </Col>
                           <Col md="3" xs="12">
                             {" "}
-                            <Button className={styles.buttonName}>Other</Button>
+                            <Button
+                              className={styles.buttonName}
+                              button="Other"
+                              onClick={e => this.handleFunc(e, "  Other")}
+                            >
+                              Other
+                            </Button>
                           </Col>
                         </Row>
 
                         <Row>
                           <Col>
-                            <Button onSubmit={userNameValid}
+                            <Button
+                              onClick={this.handleSubmit}
                               style={{
                                 backgroundColor: "#00695C",
                                 color: "#fff",
@@ -254,8 +284,6 @@ class Refresh extends React.Component {
                           </Col>
                         </Row>
                       </Col>
-
-                      {/* <Col xs={{ size: 4, offset: 4 }}></Col> */}
                     </CardBody>
                   </Card>
                 </div>
@@ -268,28 +296,31 @@ class Refresh extends React.Component {
   }
 }
 
+const userIssue = () => ({
+  issue: this.state.button
+});
+const userValue = () => ({
+  content: this.state.value
+});
+
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
 const userNameValid = async () => {
   const url = `${config.apiURL}/graphql`;
-  const query = `$mutation($username : String!, $type: String!){
-    createUHCTickets(username :$username , type : $type){
+  alert(userValue.content);
+  const query = `$mutation{
+    createUHCTickets(username :${userValue.content} , type : ${userIssue.issue}){
       id
     }
   }`;
-  return request(url, query, {
-    username: "TestHSC12",
-    type: "test"
-  })
+  await request(url, query)
     .then(async () => {
       window.location.replace("/");
     })
-    .catch(err  => {
-      console.log("wrong user");
-      // const inValidusername = () => {
-      //   content : 'Unvalid User Name',
+    .catch(err => {
+      alert("wrong user");
     });
 };
 

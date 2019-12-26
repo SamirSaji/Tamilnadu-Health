@@ -9,11 +9,9 @@ import {
   Button,
   Card,
   CardBody,
-  Form,
-  FormGroup,
   Input,
   Label,
-  Container
+  FormFeedback,
 } from "reactstrap";
 // import { AvForm, AvFeedback, AvField, AvGroup,AvInput} from 'availity-reactstrap-validation';
 
@@ -21,6 +19,7 @@ class Refresh extends React.Component {
   constructor(props) {
     super(props);
     this.logmeOut = this.logmeOut.bind(this);
+   
   }
 
   reloadtoHome() {
@@ -163,7 +162,7 @@ class Refresh extends React.Component {
                 padding: "20px 0px 50px 0px"
               }}
             >
-              <Col xs={{ size: 10, offset: 1 }}>
+              <Col xs={{ size: 10, offset: 1 }    } md={{size: 10, offset: 1 }}>
                 <div>
                   <Card
                     style={{
@@ -175,12 +174,12 @@ class Refresh extends React.Component {
 
                       <Col
                         className={styles.inputUsername}
-                        xs={{ size: 10, offset: 1 }}
+                        md={{ size: 6, offset: 3 }} xs={{size:10, offset:1}}
                       >
                         <Row>
                           <Label
                             style={{
-                              fontWeight: "400",
+                              fontWeight: "bold",
                               fontSize: "15px",
                               float: "left",
                               padding: "10px 0px 0px 0px",
@@ -196,7 +195,12 @@ class Refresh extends React.Component {
                             type="text"
                             name="text"
                             placeholder=" Enter your username"
+                            style={{
+                              borderRadius: '25px',
+                              fontSize:'18px',
+                            }}
                           />
+                       
                         </Row>
                         <Row>
                           {" "}
@@ -206,7 +210,9 @@ class Refresh extends React.Component {
                               fontWeight: "400",
                               fontSize: "15px",
                               float: "left",
-                              margin: "0px"
+                              margin: "0px",
+                              fontWeight:'bold',
+                              paddingTop:'25px',
                             }}
                           >
                             Issue Type
@@ -233,52 +239,6 @@ class Refresh extends React.Component {
                             </Button>
                           </Col>
                         </Row>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <Row>
-                          <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>
-                              Return Issue
-                            </Button>
-                          </Col>{" "}
-                          <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>Other</Button>
-                          </Col>
-                          <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>
-                              500 Error
-                            </Button>
-                          </Col>
-                          <Col md="3" xs="12">
-                            {" "}
-                            <Button className={styles.buttonName}>
-                              Account Issue
-                            </Button>
-                          </Col>
-                        </Row>
-
-
-
-
-
-
-
-
-
-
-
 
                         <Row>
                           <Col>

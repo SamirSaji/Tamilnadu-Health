@@ -3,23 +3,15 @@ import styles from "./styles/styles.less";
 import { logoutUser } from "../../../actions/authActions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import {
-  Col,
-  Row,
-  Button,
-  Card,
-  CardBody,
-  Input,
-  Label,
-  FormFeedback,
-} from "reactstrap";
-// import { AvForm, AvFeedback, AvField, AvGroup,AvInput} from 'availity-reactstrap-validation';
+import { Col, Row, Button, Card, CardBody, Input, Label } from "reactstrap";
+import { request } from "graphql-request";
+import config from "../../../config";
+// import { AvField } from "availity-reactstrap-validation";
 
 class Refresh extends React.Component {
   constructor(props) {
     super(props);
     this.logmeOut = this.logmeOut.bind(this);
-   
   }
 
   reloadtoHome() {
@@ -32,6 +24,7 @@ class Refresh extends React.Component {
     this.props.logoutUser();
     window.location.href = "/login";
   }
+
   render() {
     return (
       <div>
@@ -162,7 +155,7 @@ class Refresh extends React.Component {
                 padding: "20px 0px 50px 0px"
               }}
             >
-              <Col xs={{ size: 10, offset: 1 }    } md={{size: 10, offset: 1 }}>
+              <Col xs={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }}>
                 <div>
                   <Card
                     style={{
@@ -174,7 +167,8 @@ class Refresh extends React.Component {
 
                       <Col
                         className={styles.inputUsername}
-                        md={{ size: 6, offset: 3 }} xs={{size:10, offset:1}}
+                        md={{ size: 6, offset: 3 }}
+                        xs={{ size: 10, offset: 1 }}
                       >
                         <Row>
                           <Label
@@ -191,28 +185,34 @@ class Refresh extends React.Component {
                         </Row>
                         <Row>
                           {" "}
+                          {/* <AvField
+                            name="name"
+                            label="Name"
+                            placeholder=" Enter your username"
+                            required
+                          /> */}
                           <Input
                             type="text"
                             name="text"
                             placeholder=" Enter your username"
                             style={{
-                              borderRadius: '25px',
-                              fontSize:'18px',
+                              borderRadius: "25px",
+                              fontSize: "18px"
                             }}
                           />
-                       
+                          {/* <p>{inValidusername.content}</p> */}
                         </Row>
                         <Row>
                           {" "}
                           <Label
                             className={styles.labelButton}
                             style={{
-                              fontWeight: "400",
+                              // fontWeight: "400",
                               fontSize: "15px",
                               float: "left",
                               margin: "0px",
-                              fontWeight:'bold',
-                              paddingTop:'25px',
+                              fontWeight: "bold",
+                              paddingTop: "20px"
                             }}
                           >
                             Issue Type
@@ -221,28 +221,28 @@ class Refresh extends React.Component {
                         <Row>
                           <Col md="3" xs="12">
                             <Button className={styles.buttonName}>
-                              Return Issue
+                              500 Error
                             </Button>
                           </Col>{" "}
                           <Col md="3" xs="12">
-                            <Button className={styles.buttonName}>Other</Button>
+                            <Button className={styles.buttonName}>
+                              Unable to save line entry
+                            </Button>
                           </Col>
                           <Col md="3" xs="12">
                             <Button className={styles.buttonName}>
-                              500 Error
+                              Unable to log in
                             </Button>
                           </Col>
                           <Col md="3" xs="12">
                             {" "}
-                            <Button className={styles.buttonName}>
-                              Account Issue
-                            </Button>
+                            <Button className={styles.buttonName}>Other</Button>
                           </Col>
                         </Row>
 
                         <Row>
                           <Col>
-                            <Button
+                            <Button onSubmit={userNameValid}
                               style={{
                                 backgroundColor: "#00695C",
                                 color: "#fff",
@@ -272,4 +272,28 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logoutUser })(withRouter(Refresh));
+const userNameValid = async () => {
+  const url = `${config.apiURL}/graphql`;
+  const query = `$mutation($username : String!, $type: String!){
+    createUHCTickets(username :$username , type : $type){
+      id
+    }
+  }`;
+  return request(url, query, {
+    username: "TestHSC12",
+    type: "test"
+  })
+    .then(async () => {
+      window.location.replace("/");
+    })
+    .catch(err  => {
+      console.log("wrong user");
+      // const inValidusername = () => {
+      //   content : 'Unvalid User Name',
+    });
+};
+
+export default connect(mapStateToProps, { logoutUser })(
+  withRouter(Refresh),
+  userNameValid
+);

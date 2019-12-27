@@ -113,7 +113,7 @@ class Refresh extends React.Component {
                       பொத்தானைக் கிளிக் செய்யவும்.
                     </li>
                   </ul>
-                  e
+                
                   <a onClick={this.logmeOut}>
                     {" "}
                     <Button
@@ -296,30 +296,13 @@ class Refresh extends React.Component {
   }
 }
 
-
-// const userValue = () => ({
-//   content: this.state.value,
-// })  ;
-
-// const userIssue = state => {
-//   return ({
-//     issue: this.setState.button,
-//   });
-// };
 const mapStateToProps = state => ({
   auth: state.auth
 });
 const userNameValid = async (userValue,userIssue) => {
   const url = `${config.apiURL}/graphql`;
-  // alert(a+ '============' +b);
-  // const query = `$mutation{
-  //   createUHCTickets(username :${userValue} , type : ${userIssue}){
-  //     id
-  //   }
-  // }`;
-
-  const query = `$mutation($username : String!, $type: String!){
-    createUHCTickets(username :${userValue} , type : ${userIssue}){
+  const query = `mutation{
+    createUHCTickets(username :"${userValue}" , type : "${userIssue}"){
       id
     }
   }`;

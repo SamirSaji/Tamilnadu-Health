@@ -11,7 +11,7 @@ import {
   CardBody,
   Input,
   Label,
-  Form
+  Form,
 } from "reactstrap";
 import { request } from "graphql-request";
 import config from "../../../config";
@@ -32,8 +32,6 @@ class Refresh extends React.Component {
   };
 
   handleSubmit = event => {
-    alert("A name was submitted: " + this.state.value);
-    alert("button value " + this.state.button);
     userNameValid(this.state.value, this.state.button);
     event.preventDefault();
   };
@@ -172,7 +170,8 @@ class Refresh extends React.Component {
               </Col>
             </Row>
           </div>
-          <form>
+
+          <Form>
             <div>
               <Row
                 style={{
@@ -197,33 +196,35 @@ class Refresh extends React.Component {
                           xs={{ size: 10, offset: 1 }}
                         >
                           <Row>
-                            <Label
-                              style={{
-                                fontWeight: "bold",
-                                fontSize: "15px",
-                                float: "left",
-                                padding: "10px 0px 0px 0px",
-                                margin: "0px 0px 5px 0px"
-                              }}
-                            >
-                              Username
-                            </Label>
+                            {/* <FormGroup> */}
+                              <Label
+                                style={{
+                                  fontWeight: "bold",
+                                  fontSize: "15px",
+                                  float: "left",
+                                  padding: "10px 0px 0px 0px",
+                                  margin: "0px 0px 5px 0px"
+                                }}
+                              >
+                                Username
+                              </Label>
+                              <Input for="exampleEmail"
+                                value={this.state.value}
+                                onChange={this.handleChange}
+                                type="text"
+                                placeholder=" Enter your username"
+                                invalid
+                                style={{
+                                  borderRadius: "25px",
+                                  fontSize: "18px"
+                                }}
+                              />
+                              {/* <FormFeedback invalid>
+                                Oh noes! that name is already taken
+                              </FormFeedback> */}
+                            {/* </FormGroup> */}
                           </Row>
-                          <Row>
-                            {" "}
-                            <Input
-                              value={this.state.value}
-                              onChange={this.handleChange}
-                              type="text"
-                              placeholder=" Enter your username"
-                              required
-                              // onInvalid={}
-                              style={{
-                                borderRadius: "25px",
-                                fontSize: "18px"
-                              }}
-                            />
-                          </Row>
+        
                           <Row>
                             {" "}
                             <Label
@@ -284,7 +285,6 @@ class Refresh extends React.Component {
                               </Button>
                             </Col>
                           </Row>
-
                           <Row>
                             <Col>
                               <Button
@@ -307,7 +307,7 @@ class Refresh extends React.Component {
                 </Col>
               </Row>
             </div>
-          </form>
+          </Form>
         </div>
       </div>
     );
@@ -326,10 +326,11 @@ const userNameValid = async (userValue, userIssue) => {
   }`;
   await request(url, query)
     .then(async () => {
+      alert('Your Issue Submitted')
       window.location.replace("/");
     })
     .catch(err => {
-      alert("wrong user");
+      alert("Invalid User Name, Please Enter Correct Name");
     });
 };
 
